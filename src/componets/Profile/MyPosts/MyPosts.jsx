@@ -2,17 +2,24 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+    debugger;
+    let postsElements =
+        props.posts.map( p => <Post messange={p.message} like={p.like} age={p.age}/>)
+
     return (
-        <div>
-            My post
+        <div className={s.postsBlock}>
+            <h3>My post</h3>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
             <div className={s.posts}>
-                <Post messange='Привет, как ты Костя?' like='like ' age='32' />
-                <Post messange='Привет, нормально, а ты как?' like='like ' age='15' />
+                {postsElements}
             </div>
         </div>
     )
