@@ -4,32 +4,25 @@ import Header from './componets/Header/Header';
 import Navbar from './componets/Navbar/Navbar';
 import Profile from './componets/Profile/Profile';
 import Dialogs from './componets/Dialogs/Dialogs';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 const App = (props) => {
-
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Switch>
                         <Route path='/dialogs'
-                               render ={ () => <Dialogs state={props.state.dialogsPage} />} />
+                               render ={ () => <Dialogs state={props.state.dialogsPage}
+                                                        dispatch={props.dispatch} />} />
                         <Route path='/profile'
-                               render ={ () => <Profile state={props.state.profilePage} />} />
+                               render ={ () => <Profile profilePage={props.state.profilePage}
+                                                        dispatch={props.dispatch}/>} />
                     </Switch>
                 </div>
             </div>
-        </BrowserRouter>)
-}
-
-
-// Header Верхняя часть
-// Navbar Меню
-// Dialogs
-// Post Фотографии на сообщение
-// MyPosts сообщение
+    )
+};
 
 export default App;

@@ -1,6 +1,9 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    background-image: url("https://walpix.net/image.php?id=2489&width=600&height=338&cropratio=16:9&cropposition=crop&filename=594216954");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .dialogItems {
