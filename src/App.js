@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import Header from './componets/Header/Header';
 import Navbar from './componets/Navbar/Navbar';
-import Profile from './componets/Profile/Profile';
-import Dialogs from './componets/Dialogs/Dialogs';
 import {Route, Switch} from 'react-router-dom';
+import DialogsContainer from "./componets/Dialogs/DialogsContainer";
+import UsersContainer from "./componets/Users/UsersContainer";
+import ProfileContainer from "./componets/Profile/ProfileContainer";
 
 const App = (props) => {
     return (
@@ -13,12 +14,12 @@ const App = (props) => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Switch>
-                        <Route path='/dialogs'
-                               render ={ () => <Dialogs state={props.state.dialogsPage}
-                                                        dispatch={props.dispatch} />} />
-                        <Route path='/profile'
-                               render ={ () => <Profile profilePage={props.state.profilePage}
-                                                        dispatch={props.dispatch}/>} />
+                        <Route path='/Dialogs'
+                               render ={ () => <DialogsContainer />} />
+                        <Route path='/Profile/:userId?'
+                               render ={ () => <ProfileContainer />} />
+                        <Route path='/Users'
+                               render ={ () => <UsersContainer />} />
                     </Switch>
                 </div>
             </div>
