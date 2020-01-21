@@ -13,11 +13,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return{
-        addNewMessagesTextActionCreator: (text) => {
-            dispatch(addNewMessagesTextActionCreator(text));
+        addNewMessagesTextActionCreator: () => {
+            dispatch(addNewMessagesTextActionCreator());
         },
-        addMessagesActionCreator: () => {
-            dispatch(addMessagesActionCreator());
+        addMessagesActionCreator: (newMessagesText) => {
+            dispatch(addMessagesActionCreator(newMessagesText));
         }
     }
 };

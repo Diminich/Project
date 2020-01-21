@@ -17,29 +17,23 @@ let initialState = {
         {id: 4, message: 'Что-то пошло не так.'},
         {id: 5, message: 'Я учусь на программиста.'},
         {id: 6, message: 'Что?'}
-    ],
-    newMessagesText: 'Привет. Хочу играть'
-
+    ]
 };
 
 const dialogReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_MESSAGES:
-            let newMessage = {
-                id: 7,
-                message: state.newMessagesText
-            };
+            let body = action.newMessagesText;
             return {
                 ...state,
-                messages: [...state.messages, newMessage],
-                newMessagesText: ''
+                messages: [...state.messages, {id: 7, message: body}]
             };
 
         case UPDATE_NEW_MESSAGES_TEXT:
             return {
                 ...state,
-                newMessagesText: action.newText
+                newMessagesText: action.body
             };
 
         default:
@@ -47,10 +41,9 @@ const dialogReducer = (state = initialState, action) => {
     }
     ;
 
-    // return state;
 };
 
-export const addMessagesActionCreator = () => ({type: ADD_MESSAGES});
+export const addMessagesActionCreator = (newMessagesText) => ({type: ADD_MESSAGES, newMessagesText});
 export const addNewMessagesTextActionCreator = (text) => ({type: UPDATE_NEW_MESSAGES_TEXT, newText: text});
 
 export default dialogReducer;
