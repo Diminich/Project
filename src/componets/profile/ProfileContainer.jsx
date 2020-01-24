@@ -1,7 +1,7 @@
 import React from 'react';
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {Redirect, withRouter} from "react-router-dom";
+import {withRouter} from "react-router-dom";
 import {getUserProfile, getUserStatus, updateUserStatus} from "../../redux/Profile-reducer";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
@@ -15,7 +15,7 @@ class ProfileContainer extends React.Component {
             userId = 5344;
         }
         this.props.getUserProfile(userId);
-            this.props.getUserStatus(userId)
+        this.props.getUserStatus(userId)
     }
 
     render() {
