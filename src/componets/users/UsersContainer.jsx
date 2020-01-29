@@ -1,25 +1,29 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {
-    follow, getUsers,
+import { follow, requestUsers,
     setCurrentPage,
     toggleIsFetching, toggleIsFollowingInProgress,
-    unFollow
-} from "../../redux/Users-reducer";
+    unFollow } from "../../redux/Users-reducer";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
-import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
+import {
+    getCurrentPage,
+    getFollowingInProgress,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount, getUsers
+} from "../../redux/Users-selectors";
 
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
+        this.props.requestUsers(this.props.currentPage, this.props.pageSize);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.currentPage !== prevProps.currentPage) {
-            this.props.getUsers(this.props.currentPage, this.props.pageSize);
+            this.props.requestUsers(this.props.currentPage, this.props.pageSize);
         }
     }
 
@@ -40,18 +44,17 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: state.userPage.users,
-        pageSize: state.userPage.pageSize,
-        totalUsersCount: state.userPage.totalUsersCount,
-        currentPage: state.userPage.currentPage,
-        isFetching: state.userPage.isFetching,
-        followingInProgress: state.userPage.followingInProgress
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state)
     }
 };
 
 export default compose (
-    withAuthRedirect,
     connect(mapStateToProps, {
     follow, unFollow, setCurrentPage, toggleIsFetching,
-    toggleIsFollowingInProgress, getUsers
+    toggleIsFollowingInProgress, requestUsers
 }))(UsersContainer)
