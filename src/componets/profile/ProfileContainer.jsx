@@ -10,15 +10,16 @@ import {compose} from "redux";
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
+        let {getUserProfile, getUserStatus, history, authorized} = this.props;
         let userId = this.props.match.params.userId;
         if (!userId) {
-            userId = this.props.authorized;
+            userId = authorized;
             if (!userId) {
-                this.props.history.push('/login')
+                history.push('/login')
             }
         }
-        this.props.getUserProfile(userId);
-        this.props.getUserStatus(userId)
+        getUserProfile(userId);
+        getUserStatus(userId)
     }
 
     render() {

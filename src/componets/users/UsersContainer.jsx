@@ -18,12 +18,14 @@ import {
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+        let {currentPage, pageSize, requestUsers} = this.props;
+        requestUsers(currentPage, pageSize);
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.currentPage !== prevProps.currentPage) {
-            this.props.requestUsers(this.props.currentPage, this.props.pageSize);
+        let {currentPage, requestUsers, pageSize} = this.props;
+        if (currentPage !== prevProps.currentPage) {
+            requestUsers(currentPage, pageSize);
         }
     }
 
