@@ -8,7 +8,6 @@ import {compose} from "redux";
 import {initializedApp} from "./redux/App-reducer";
 import Preloader from "./componets/common/preloader/Preloader";
 import {withSuspense} from "./componets/hoc/withSuspense";
-
 const DialogsContainer = React.lazy(() => import('./componets/dialogs/DialogsContainer'));
 const UsersContainer = React.lazy(() => import('./componets/users/UsersContainer'));
 const ProfileContainer = React.lazy(() => import('./componets/profile/ProfileContainer'));
