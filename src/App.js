@@ -8,7 +8,6 @@ import {compose} from "redux";
 import {initializedApp} from "./redux/App-reducer";
 import Preloader from "./componets/common/preloader/Preloader";
 import {withSuspense} from "./componets/hoc/withSuspense";
-
 const DialogsContainer = React.lazy(() => import('./componets/dialogs/DialogsContainer'));
 const UsersContainer = React.lazy(() => import('./componets/users/UsersContainer'));
 const ProfileContainer = React.lazy(() => import('./componets/profile/ProfileContainer'));
@@ -36,8 +35,8 @@ class App extends React.Component {
         return (
             <div className='app-wrapper'>
                 <HeaderContainer/>
-                <Navbar/>
                 <div className='app-wrapper-content'>
+                    <Navbar/>
                     <Switch>
                         <Route exact path='/'
                                render={() => <Redirect to={'/Profile'}/>}/>

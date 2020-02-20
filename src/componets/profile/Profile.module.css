@@ -1,0 +1,6 @@
+.profileBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border-top: 1px solid white;
+}

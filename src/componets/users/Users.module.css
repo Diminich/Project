@@ -1,4 +1,30 @@
-.photo {
-    width: 100px;
-    height: 100px;
+.usersContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid white;
+    width: 100%;
+}
+
+.usersInformation {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.buttonFollowUnfollow {
+    margin: 0 0 10px 0;
+}
+
+.usersLocation {
+    color: white;
+}
+
+.users {
+    width: 100%;
+}
+
+.city {
+    padding: 0 0 15px 0;
 }

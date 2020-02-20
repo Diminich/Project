@@ -1,27 +1,71 @@
 .dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-    background-image: url("https://walpix.net/image.php?id=2489&width=600&height=338&cropratio=16:9&cropposition=crop&filename=594216954");
-    background-repeat: no-repeat;
-    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-top: 1px solid white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
 }
 
 .dialogItems {
-    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(31,31,31,0.76);
+    width: 300px;
+    height: 300px;
+    border: 1px solid white;
 }
 
-.dialogItems .active {
+.messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(31,31,31,0.76);
+    width: 300px;
+    height: 300px;
+    border: 1px solid white;
+}
+
+.dialogItems a {
+    color: white;
+    text-decoration: none;
+}
+
+.textAreaAddMessagesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonAddMessage {
+    border-radius: 12px;
+    outline: 1px solid transparent;
+    margin-top: 20px;
+}
+
+.textAreaAddMessages {
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+    padding: 2px 0 0 12px;
+    outline: 1px solid transparent;
+    resize: none;
+}
+
+.dialogItemsMessages {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dialogItems.active {
     color: blue;
 }
 
 .dialog {
     color:rgb(0, 0, 0);
-}
-
-.messages {
-    padding: 10px;
-}
-
-.message{
-    
 }

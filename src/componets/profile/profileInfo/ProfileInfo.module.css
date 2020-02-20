@@ -1,11 +1,61 @@
 .deskriptionBlock {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .mainPhoto {
     man-with: 200px;
+    border: 1px solid white;
+    margin: 5px;
 }
 
 .contact {
     padding-left: 10px;
+}
+
+.buttonSaveSetting {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonEdit {
+    width: 40%;
+    margin: 5px;
+}
+
+.fullName {
+    border: 1px solid white;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+.LookingForJob {
+    border: 1px solid white;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+.MyProfessionalSkills {
+    border: 1px solid white;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+.AboutMe {
+    border: 1px solid white;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+.Contacts {
+    border: 1px solid white;
+    margin: 0 0 10px;
+    padding: 5px;
+}
+
+.status {
+    border: 1px solid white;
+    margin: 0 0 10px;
+    padding: 5px;
 }

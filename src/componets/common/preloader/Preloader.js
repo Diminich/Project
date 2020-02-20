@@ -5,7 +5,7 @@ import React from "react";
 let Preloader = (props) => {
     return (
         <div className={style.loading}>
-            <img src={preloader}/>
+            <img className={style.imgPreloader} src={preloader}/>
         </div>
     )
 };

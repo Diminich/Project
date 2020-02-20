@@ -1,13 +1,14 @@
 import React from 'react';
+import s from './Users.module.css'
 import Paginator from "../common/Paginators/Paginator";
 import User from "./User";
 
 let Users = ({currentPage, setCurrentPage, totalUsersCount, pageSize, users, followingInProgress, unFollow, follow,}) => {
     return (
-        <div>
+        <div className={s.usersContainer}>
             <Paginator currentPage={currentPage} setCurrentPage={setCurrentPage}
                        totalItemCount={totalUsersCount} pageSize={pageSize}/>
-            <div>
+            <div className={s.users}>
                 {
                     users.map(u =>
                         <User user={u} key={u.id} followingInProgress={followingInProgress} unFollow={unFollow}
@@ -15,8 +16,7 @@ let Users = ({currentPage, setCurrentPage, totalUsersCount, pageSize, users, fol
                     )
                 }
             </div>
-
         </div>)
-}
+};
 
 export default Users;

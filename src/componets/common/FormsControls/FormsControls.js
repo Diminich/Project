@@ -12,24 +12,24 @@ const  FormControl = ({input, meta:{touched, error}, children}) => {
             {hasError && <span>{error}</span>}
         </div>
     )
-}
+};
 
 export const Textarea = (props) => {
     const {input, meta, child, ...restProps} = props;
-  return <FormControl {...props}><textarea {...input} {...restProps}/></FormControl>
+  return <FormControl {...props}><textarea {...input} className={styles.textAreaFormControl} {...restProps}/></FormControl>
 };
 
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return <FormControl {...props}><input {...input} {...restProps}/></FormControl>
+    return <FormControl {...props}><input {...input} className={styles.inputFormControl} {...restProps}/></FormControl>
 };
 
 export const createField = (placeholder, name, validators, component, props = {}, text = "") => (
-    <div>
+    <div className={styles.inputsForm}>
         <Field placeholder={placeholder} name={name}
                validate={validators}
                component={component}
                {...props}
         /> {text}
     </div>
-)
+);

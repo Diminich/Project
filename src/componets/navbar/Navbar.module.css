@@ -1,17 +1,16 @@
 .nav {
-    grid-area: n;
-    background-color: red;
+    background-color: gray;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
     padding: 20px;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLB-PJgsZWKR331jpFWr1YrsYWxhmBztEPU9AfMyhly52igu4ynQ");
-    background-repeat: no-repeat;
-    background-size: 300px 800px;
 }
 
-    .item a {
-        color: white;
-        text-decoration: none;
-    }
+.item a {
+    color: white;
+    text-decoration: none;
+}
 
-    .item a.active {
-        color: gold;
-    }
+.item a.active {
+    color: gold;
+}

@@ -19,13 +19,15 @@ const Dialogs = (props) => {
 
     return (
         <div className={s.dialogs}>
-            <div className={s.dialogItems}>
-                {dialogs}
+            <div className={s.dialogItemsMessages}>
+                <div className={s.dialogItems}>
+                    {dialogs}
+                </div>
+                <div className={s.messages}>
+                    <div>{messages}</div>
+                </div>
             </div>
-            <div className={s.messages}>
-                <div>{messages}</div>
-            </div>
-            <AddMessageFormRedux onSubmit={addNewMessageBody} />
+            <AddMessageFormRedux onSubmit={addNewMessageBody}/>
         </div>
     )
 };
@@ -34,15 +36,16 @@ const maxLength = maxLengthCreator(50);
 
 const AddMessageForm = (props) => {
 
-    const { handleSubmit } = props;
+    const {handleSubmit} = props;
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={s.textAreaAddMessagesContainer}>
             <div>
-                <Field placeholder={'Enter your message'} name={'newMessagesText'} validate={[required, maxLength]} component={Textarea} />
+                <Field className={s.textAreaAddMessages} placeholder={'Enter your message'} name={'newMessagesText'} validate={[required, maxLength]}
+                       component={Textarea}/>
             </div>
             <div>
-                <button>Add Message</button>
+                <button className={s.buttonAddMessage}>Add Message</button>
             </div>
         </form>
     )

@@ -14,7 +14,7 @@ const MyPosts = React.memo(props => {
 
     return (
         <div className={s.postsBlock}>
-            <h3>My post</h3>
+            <h3 className={s.stringMyPost}>My post</h3>
             <AddNewTextPostForm onSubmit={onAddPost}/>
             <div className={s.posts}>
                 {postsElements}
@@ -32,9 +32,10 @@ const AddNewPostForm = (props) => {
                 <Field name='newPostText'
                        component={Textarea}
                        validate={[required, maxLength]}
-                       placeholder={'Post message'}/>
+                       placeholder={'Post message'}
+                       className={s.textareaPost}/>
             </div>
-            <div>
+            <div className={s.buttonAddPost}>
                 <button>Add post</button>
             </div>
         </form>

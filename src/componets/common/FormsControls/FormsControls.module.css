@@ -13,3 +13,52 @@
     padding: 5px;
     color: red;
 }
+
+.textAreaFormControl {
+    resize: none;
+    width: 270px;
+}
+
+.inputFormControl {
+    width: 250px;
+}
+
+.loginContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputsForm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.buttonAddLogin {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.captcha {
+    margin: 10px;
+}
+
+.saveContainerSetting {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.buttonSaveSetting {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.saveButton {
+    width: 40%;
+    margin: 5px;
+}

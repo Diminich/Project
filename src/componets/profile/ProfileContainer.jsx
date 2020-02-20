@@ -5,8 +5,7 @@ import {withRouter} from "react-router-dom";
 import {getUserProfile, getUserStatus, savePhoto, saveProfile, updateUserStatus} from "../../redux/Profile-reducer";
 import {withAuthRedirect} from "../hoc/withAuthRedirect";
 import {compose} from "redux";
-
-
+import s from "./ProfileContainer.module.css";
 class ProfileContainer extends React.Component {
 
     refreshProfile = () => {
@@ -35,7 +34,7 @@ class ProfileContainer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={s.profileDataContainer}>
                 <Profile isOwner={!this.props.match.params.userId} {...this.props} profile={this.props.profile}
                          status={this.props.status} updateUserStatus={this.props.updateUserStatus}
                          savePhoto={this.props.savePhoto} saveProfile={this.props.saveProfile}/>

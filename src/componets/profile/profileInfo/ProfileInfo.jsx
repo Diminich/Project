@@ -45,25 +45,25 @@ const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return (
         <div>
             {isOwner &&
-            <div>
-                <button onClick={goToEditMode}>edit</button>
+            <div className={s.buttonSaveSetting}>
+                <button className={s.buttonEdit} onClick={goToEditMode}>edit</button>
             </div>
             }
-            <div>
+            <div className={s.fullName}>
                 <b>Full name</b>: {profile.fullName}
             </div>
-            <div>
+            <div className={s.LookingForJob}>
                 <b>Looking for a job</b>: {profile.lookingForAJob ? 'Yes' : 'No'}
             </div>
             {profile.lookingForAJob &&
-            <div>
+            <div className={s.MyProfessionalSkills}>
                 <b>My professional skills</b>: {profile.lookingForAJobDescription}
             </div>
             }
-            <div>
+            <div className={s.AboutMe}>
                 <b>About me</b>: {profile.aboutMe}
             </div>
-            <div>
+            <div className={s.Contacts}>
                 <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
                 return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
             })}

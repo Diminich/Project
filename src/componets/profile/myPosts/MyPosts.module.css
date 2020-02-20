@@ -1,7 +1,23 @@
 .postsBlock {
     padding: 10px;
+    width: 265px;
 }
 
 .posts {
     margin-top: 10px;
+}
+
+.textareaPost {
+    resize: none;
+    width: 260px;
+}
+
+.stringMyPost {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonAddPost {
+    display: flex;
+    justify-content: flex-end;
 }
