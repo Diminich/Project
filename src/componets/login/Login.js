@@ -41,6 +41,9 @@ const Login = (props) => {
 
     return (
         <div className={styles.loginContainer}>
+            <h4 className={styles.testEmailPassword}>Для просмотра соц сети введите тестовый Email и Password</h4>
+            <h4 className={styles.testEmailPassword}>Email: free@samuraijs.com</h4>
+            <h4 className={styles.testEmailPassword}>Password: free</h4>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
         </div>
