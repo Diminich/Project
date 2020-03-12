@@ -3,6 +3,12 @@
     width: 265px;
 }
 
+.textareaButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .posts {
     margin-top: 10px;
 }
@@ -20,4 +26,5 @@
 .buttonAddPost {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
 }

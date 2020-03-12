@@ -27,7 +27,7 @@ const maxLength = maxLengthCreator(30);
 
 const AddNewPostForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit} className={s.textareaButton}>
             <div>
                 <Field name='newPostText'
                        component={Textarea}
