@@ -1,0 +1,42 @@
+.contact {
+    padding-left: 10px;
+}
+
+.fullName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.LookingForJob {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.MyProfessionalSkills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.AboutMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Contacts {
+
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
